@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 import taskRoutes from "./routes/task.routes.js";
 configDotenv();
 const app = express();
-app.use(cors());
+app.use(cors({ credentials: true }));
 app.use(morgan("dev"));
 app.use("/api/v1", authRoutes);
 app.use("/api/v1", taskRoutes);
